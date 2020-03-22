@@ -1,12 +1,12 @@
-# map (lodash-to-native/map)
+# Array native method "map" can be used instead of lodash method (lodash-to-native/map)
 
-В библиотеке Lodash есть функция map. Она может использоваться как с массивами, так и с объектами.
+В библиотеке Lodash есть функция map. Она может использоваться, как с массивами, так и с объектами.
 
 Правило находит использование функции _.map, и, если это возможно, предлагает заменить его на использование нативного Array#map.
 
-## Rule Details
+## Подробности правила
 
-Examples of **incorrect** code for this rule:
+Пример **некорректного** кода для этого правила:
 
 ```js
 
@@ -19,7 +19,7 @@ Examples of **incorrect** code for this rule:
 
 ```
 
-Examples of **correct** code for this rule:
+Пример **корректного** кода для этого правила:
 
 ```js
 
@@ -30,4 +30,10 @@ Examples of **correct** code for this rule:
   console.log(array);
   // output: [2, 4, 6]
 
+```
+
+## Запуск тестов
+
+```
+$ npm run test
 ```

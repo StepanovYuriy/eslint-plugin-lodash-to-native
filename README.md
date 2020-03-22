@@ -1,36 +1,36 @@
 # eslint-plugin-lodash-to-native
 
-lodash-to-native map
+Плагин для замены функций библиотеки Lodash нативными аналогами.
 
-## Installation
+## Установка
 
-You'll first need to install [ESLint](http://eslint.org):
-
-```
-$ npm i eslint --save-dev
-```
-
-Next, install `eslint-plugin-lodash-to-native`:
+Установка [ESLint](http://eslint.org):
 
 ```
-$ npm install eslint-plugin-lodash-to-native --save-dev
+$ npm i -D eslint
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-lodash-to-native` globally.
+Установка плагина `eslint-plugin-lodash-to-native`:
 
-## Usage
+```
+$ npm i -D https://github.com/StepanovYuriy/eslint-plugin-lodash-to-native.git
+```
 
-Add `lodash-to-native` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+## Применение
+
+Добавить в файл конфигурации `.eslintrc` плагин и правило:
 
 ```json
 {
     "plugins": [
         "lodash-to-native"
-    ]
+    ],
+    "rules": {
+        "lodash-to-native/map": "warn"
+    }
 }
 ```
 
+## Список правил
 
-
-
-
++ [lodash-to-native/map](./docs/rules/map.md): Array native method "map" can be used instead of lodash method
