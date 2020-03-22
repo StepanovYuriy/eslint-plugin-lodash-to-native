@@ -1,17 +1,21 @@
-# map (map)
+# map (lodash-to-native/map)
 
-Please describe the origin of the rule here.
+В библиотеке Lodash есть функция map. Она может использоваться как с массивами, так и с объектами.
 
+Правило находит использование функции _.map, и, если это возможно, предлагает заменить его на использование нативного Array#map.
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
 
-// fill me in
+  // Lodash/Underscore
+  var array = _.map([1, 2, 3], function (value) {
+    return value * 2;
+  });
+  console.log(array);
+  // output: [2, 4, 6]
 
 ```
 
@@ -19,18 +23,11 @@ Examples of **correct** code for this rule:
 
 ```js
 
-// fill me in
+  // Native
+  var array = [1, 2, 3].map(function (value) {
+    return value * 2;
+  });
+  console.log(array);
+  // output: [2, 4, 6]
 
 ```
-
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.

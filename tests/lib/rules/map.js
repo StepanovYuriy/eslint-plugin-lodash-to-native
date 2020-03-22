@@ -1,37 +1,21 @@
-/**
- * @fileoverview map
- * @author StepanovYuriy
- */
-"use strict";
+'use strict';
+const rule = require('../../../lib/rules/map');
+const RuleTester = require('eslint').RuleTester;
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-var rule = require("../../../lib/rules/map"),
-
-    RuleTester = require("eslint").RuleTester;
-
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
-
-var ruleTester = new RuleTester();
-ruleTester.run("map", rule, {
+const ruleTester = new RuleTester({ parserOptions: { ecmaVersion: 6 } });
+ruleTester.run('map', rule, {
 
     valid: [
-
-        // give me some code that won't trigger a warning
+        '_.map({a: 1, b: 2}, fn);',
     ],
 
     invalid: [
         {
-            code: "map fail",
+            code: 'map fail',
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
-        }
-    ]
+                message: 'Fill me in.',
+                type: 'Me too',
+            }],
+        },
+    ],
 });
